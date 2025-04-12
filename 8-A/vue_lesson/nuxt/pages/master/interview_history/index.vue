@@ -13,17 +13,24 @@
             :click_row="clickRow"
         ></data-table>
 
+        <interview-form-dialog 
+            ref="dialog" 
+            v-model="dialog_data" 
+            @reload="$refs.table.getItems()"
+        />
     </div>
 </template>
 
 <script>
     import SearchForm from "../../../components/Molecules/SearchForm";
     import DataTable from "../../../components/Molecules/DataTable";
+    import InterviewFormDialog from "@/components/Interview/InterviewFormDialog";
     export default {
         name: "index",
-        components: {DataTable, SearchForm},
+        components: {DataTable, SearchForm, InterviewFormDialog},
         data(){
             return{
+                dialog_data: {},
                 headers: [
                     { text: '面談日', value: 'date', type: 'date' },
                     { text: '受講者名', value: 'student_name_kana' },
@@ -54,7 +61,8 @@
         },
         methods:{
             clickRow(item){
-                this.$router.push('/master/interview_history/' + item.student_id);
+                this.dialog_data = item;
+                this.$refs.dialog.$refs.dialog.show();
             },
         }
     }
