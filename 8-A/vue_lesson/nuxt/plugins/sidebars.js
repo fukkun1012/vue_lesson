@@ -64,6 +64,11 @@ const $sidebars = {
             icon:'mdi-account-cog-outline ',
             url: '/admin/user'
         },
+        {
+            title:'面談履歴',
+            icon:'mdi-account-check',
+            url: '/admin/interview_history'
+        },
     ],
     student:[
         {
