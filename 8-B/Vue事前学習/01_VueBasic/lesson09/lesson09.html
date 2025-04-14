@@ -1,0 +1,62 @@
+<!--
+<練習問題9>
+プロパティデータのusersを表形式で表示してください。
+参考動画のように削除ボタンをクリックしたとき、対象ユーザを消すようにしてください。
+ただし、参考動画のようにチェックしてから削除した際、
+そのチェックが他の行に反映されないよう注意してください。
+
+[ヒント]
+v-for
+key指定
+
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson09</title>
+</head>
+<body>
+    <div id='app'>
+        <table>
+            <tr>
+                <th>選択</th>
+                <th>ID</th>
+                <th>氏名</th>
+                <th>性別</th>
+                <th>年齢</th>
+                <th>-</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        new Vue({
+            data: {
+                users: [
+                    {
+                        id: 1,
+                        name: '山田 太郎',
+                        gender: '男',
+                        age: 27,
+                    },
+                    {
+                        id: 2,
+                        name: '鈴木 花子',
+                        gender: '女',
+                        age: 25,
+                    },
+                    {
+                        id: 3,
+                        name: '田中 一朗',
+                        gender: '男',
+                        age: 31,
+                    }
+                ]
+            },
+        })
+    </script>
+</body>
+</html>

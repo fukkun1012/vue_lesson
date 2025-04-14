@@ -1,0 +1,55 @@
+<!--
+<練習問題11>
+1. likeComponent.jsに登録したコンポーネントを当ファイルで読み込んで表示してください。
+
+2. 以下19行目〜26行目（<div class='input-message'>〜</div>）をコンポーネント化して
+ローカル登録したものを呼び出してください。
+データプロパティ、メソッドいずれもコンポーネントに含めること。
+
+[ヒント]
+ローカル登録、グローバル登録
+コンポーネントでのdataプロパティの記述
+
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson11</title>
+</head>
+<body>
+    <div id='app'>
+        <section>
+            <div class='input-message'>
+                <label>入力: </label>
+                <input type='text' v-model='message' @input='strLength'>
+                <p>{{ message }}</p>
+                <p v-if='strCheck' style='color:red'>
+                    8文字以上で入力してください
+                </p>
+            </div>
+            <link-component></link-component>
+        </section>
+    </div>
+
+    <script>
+        new Vue({
+            data: {
+                message: '',
+                strCheck: false
+            },
+            methods: {
+                strLength() {
+                    if(this.message.length === 0 || this.message.length >= 8) {
+                        this.strCheck = false;
+                    } else {
+                        this.strCheck = true;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!--
+<練習問題7>
+参考動画のようにボタンをクリックしたとき、赤ブロックの表示/非表示を切り替えるようにしてください。
+ボタンの文言も「消す」「表示」のように切り替えること。
+
+[ヒント]
+v-if
+
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson07</title>
+</head>
+<style>
+.box {
+    background-color: red;
+    color: white;
+    width: 20rem;
+    height: 10rem;
+}
+</style>
+<body>
+    <div id='app'>
+        <section>
+            <button>{{ btn_text }}</button>
+            <div class='box'>box</div>
+        </section>
+    </div>
+
+    <script>
+        new Vue({
+            data: {
+                btn_text: 'boxを消す',
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!--
+<練習問題4>
+以下Vueプログラムを動作させましょう。
+Aタグのhref属性、alt属性にプロパティlink1, link2の値を設定してください。
+
+[ヒント]
+v-bind
+JSにおけるオブジェクト
+
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson04</title>
+</head>
+<body>
+    <div id='app'>
+        <section>
+            <a href='' alt=''>Google</a>
+            <a href='' alt=''>Yahoo</a>
+        </section>
+    </div>
+
+    <script>
+        new Vue({
+            data: {
+                link1: {
+                    href: 'http://www.google.co.jp/',
+                    alt: 'これはGoogleのURLです'
+                },
+                link2: {
+                    href: 'http://www.yahoo.co.jp/',
+                    alt: 'これはYahooのURLです'
+                }
+            },
+        })
+    </script>
+</body>
+</html>

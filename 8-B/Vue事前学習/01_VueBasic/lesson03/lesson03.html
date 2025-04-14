@@ -1,0 +1,34 @@
+<!--
+<練習問題3>
+以下Vueプログラムを動作させましょう。
+changeMessageという引数に文字列を渡すとmessageの変更を行い、結果を返すメソッドを作成し、
+そのメソッドを呼び出してブラウザに算出結果を表示してください。
+ただし、messageの変更前と変更後を表示すること
+
+[ヒント]
+v-once
+
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson03</title>
+</head>
+<body>
+    <div id='app'>
+        <p>変更前: <!-- ここに変更前の結果を表示してください --></p>
+        <p>変更後: <!-- ここに変更後の結果を表示してください --></p>
+    </div>
+
+    <script>
+        new Vue({
+            data: {
+                message: 'Hello World!'
+            },
+        })
+    </script>
+</body>
+</html>

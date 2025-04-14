@@ -1,0 +1,55 @@
+<!--
+<練習問題5>
+以下Vueプログラムを動作させましょう。
+テキストフォームと送信ボタンの挙動について以下に従って制御してください。
+
+■メソッド概要
+　insertDataメソッド
+　　引数: テキストフォームの入力値
+　　処理: messageを引数値で更新
+
+　checkDataメソッド
+　　引数: なし
+　　処理: フォーム入力の文字数が8文字未満の場合、messageを「8文字以上で入力してください」に更新
+
+　submitDataメソッド
+　　引数: なし
+　　処理: messageをポップアップ表示
+
+■イベントタイミング
+　フォームに入力毎insertDataを呼び出し、messageを更新する
+　フォームに入力後checkDataを呼び出し、messageの文字数が8文字以上かチェックする
+　送信ボタンを押下後submitDataを呼び出し、messageをポップアップ表示する
+
+
+[ヒント]
+v-on or v-model
+$event
+
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson05</title>
+</head>
+<body>
+    <div id='app'>
+        <section>
+            <input type='text'>
+            <button>送信</button>
+            <p style='color:red'>{{ message }}</p>
+        </section>
+    </div>
+
+    <script>
+        new Vue({
+            data: {
+                message: ''
+            },
+        })
+    </script>
+</body>
+</html>

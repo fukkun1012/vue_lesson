@@ -49,7 +49,7 @@ class InterviewHistoryRepository extends AbstractRepository implements Interview
                 'users.name as user_name',
                 'interview_histories.sales_evaluation',
                 'schedules.date',
-                // 'evaluation_reason'
+                'interview_histories.evaluation_reason',
             ])
             ->where(function (Builder $builder) use ($query) {
                 $this->search($builder, $query);
@@ -65,7 +65,8 @@ class InterviewHistoryRepository extends AbstractRepository implements Interview
                 'students.name_kana',
                 'users.name',
                 'interview_histories.sales_evaluation',
-                'schedules.date'
+                'schedules.date',
+                'interview_histories.evaluation_reason'
             )
             ->paginate($this->getPerPage($query))
             ->toArray();

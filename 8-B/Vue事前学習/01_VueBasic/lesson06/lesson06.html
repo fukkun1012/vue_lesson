@@ -1,0 +1,50 @@
+<!--
+<練習問題6>
+以下はgetCount1, getCount2メソッドでカウントされた数値を表示するVueプログラムです。
+現状はボタンを押すたび（再描画されるたび）、無関係なメソッドも呼び出されてしまいます。
+count1を加算した場合はgetCount1メソッド、
+count2を加算した場合はgetCount2メソッドのみを呼び出すように修正してください。
+ただし、初期表示時に２つ呼び出されるのは問題ありません。
+
+[ヒント]
+computed
+
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson06</title>
+</head>
+<body>
+    <div id='app'>
+        <section>
+            <p>{{ getCount1() }}</p>
+            <button @click='count1++'>count1を加算</button>
+            <p>{{ getCount2() }}</p>
+            <button @click='count2++'>count2を加算</button>
+        </section>
+    </div>
+
+    <script>
+        new Vue({
+            data: {
+                count1: 0,
+                count2: 0,
+            },
+            methods: {
+                getCount1() {
+                    alert('getCount1メソッドが呼ばれました');
+                    return this.count1;
+                },
+                getCount2() {
+                    alert('getCount2メソッドが呼ばれました');
+                    return this.count2;
+                },
+            }
+        })
+    </script>
+</body>
+</html>
