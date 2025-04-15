@@ -46,7 +46,7 @@ export default {
                     action: item => {
                         this.isButtonClicked = true;
                         this.$router.push(
-                            "/admin/interview_history/" + item.student_id
+                            "/admin/student/" + item.student_id
                         );
                     },
                     searchable: false
